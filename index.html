@@ -1,7 +1,7 @@
 <html>
 <head>
     <style>
-    .centred {
+    div.centred {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -9,18 +9,44 @@
         transform: translate(-50%, -50%);
         border: none;
     }
+    
+    span.centred {
+        position: fixed;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border: none;
+    }
+    
+    button {
+        background: #3e627a;
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+        border-radius: 10px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 2em;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+    }
+    
     </style>
     
     <script src="tonejs/Tone.js"></script>
 </head>
 <body>
     <div class="centred">
-        <img id="hand" src="hand.png"></img>
+        <img id="hand" src="hand.png"></img><br>
+        <span class="centred">
+            <button id="button">click me</button>
+        </span>
     </div>
 
     <script>
     var hand = document.getElementById("hand");
+    var button = document.getElementById("button");
     hand.onclick = hand.ontouchstart = mouseActions;
+    button.onclick = button.ontouchstart = mouseActions;
     
     var slap = new Tone.Player({
        "url" : "slap.mp3"
