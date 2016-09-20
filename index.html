@@ -1,19 +1,35 @@
 <html>
+<head>
+    <style>
+    .centred {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+    }
+    </style>
+</head>
 <body>
-<img id="hand" src="hand.png"></img>
-<audio id="slap">
-    <source src="slap.mp3"></source>
-</audio>
+    <audio id="slap">
+        <source src="slap.mp3"></source>
+    </audio>
 
-<script>
+    <div class="centred">
+        <img id="hand" src="hand.png"></img>
+    </div>
+
+    <script>
     var hand = document.getElementById("hand");
-    var slap = document.getElementById("slap");
+
+    hand.addEventListener("onmousedown", mouseActions);
     
     function mouseActions(event) {
+        var slap = document.getElementById("slap");
         slap.play();
     }
-    hand.addEventListener("onmousedown", mouseActions);
-</script>
+    </script>
 
 </body>
 </html>
