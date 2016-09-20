@@ -7,7 +7,7 @@
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        border: 1px solid black;
+        border: none;
     }
     </style>
 </head>
@@ -22,9 +22,8 @@
 
     <script>
     var hand = document.getElementById("hand");
+    hand.onclick = hand.ontouchstart = mouseActions;
 
-    hand.addEventListener("onmousedown", mouseActions);
-    
     function mouseActions(event) {
         var slap = document.getElementById("slap");
         slap.play();
