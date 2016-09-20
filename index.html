@@ -1,5 +1,17 @@
 <html>
 <body>
-boo!
+    <script>
+        var hand = document.getElementById("hand");
+        var slap = document.getElementById("slap");
+        
+        function mouseActions(event) {
+            slap.play();
+        }
+        hand.addEventListener("onmousedown", mouseActions);
+    </script>
+<img id="hand" src="hand.png"></img>
+<audio>
+    <source src="slap.mp3"></source>
+</audio>
 </body>
 </html>
