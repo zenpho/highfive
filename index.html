@@ -23,9 +23,9 @@
     hand.onclick = hand.ontouchstart = mouseActions;
     
     var slap = new Tone.Player({
-       "url" : "slap.mp3",
+       "url" : "slap.mp3"
     });
-    slap.connect(Tone.master);
+    slap.connect(Tone.Master);
 
     function mouseActions(event) {
         slap.start();
