@@ -10,12 +10,10 @@
         border: none;
     }
     </style>
+    
+    <script src="tonejs/Tone.js"></script>
 </head>
 <body>
-    <audio id="slap">
-        <source src="slap.mp3"></source>
-    </audio>
-
     <div class="centred">
         <img id="hand" src="hand.png"></img>
     </div>
@@ -23,10 +21,14 @@
     <script>
     var hand = document.getElementById("hand");
     hand.onclick = hand.ontouchstart = mouseActions;
+    
+    var slap = new Tone.Player({
+       "url" : "slap.mp3",
+    });
+    slap.connect(Tone.master);
 
     function mouseActions(event) {
-        var slap = document.getElementById("slap");
-        slap.play();
+        slap.start();
     }
     </script>
 
