@@ -48,14 +48,16 @@
     hand.onclick = hand.ontouchstart = mouseActions;
     button.onclick = button.ontouchstart = mouseActions;
     
-    var slap = new Tone.Player({
+    var snd = new Tone.Player({
        "url" : "slap.mp3",
        "retrigger" : "true"
     });
-    slap.connect(Tone.Master);
+    snd.connect(Tone.Master);
 
     function mouseActions(event) {
-        slap.start();
+        snd.start();
+        if (snd.url == "slap.mp3") snd.url = "borat.mp3";
+        else if (snd.url == "borat.mp3") snd.url = "slap.mp3";
     }
     </script>
 
