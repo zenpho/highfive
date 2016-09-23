@@ -10,6 +10,23 @@
         border: none;
     }
     
+    div.notification {
+        width: 200px;
+        height: 200px;
+        background: red;
+        -webkit-animation: fadeinout 4s linear forwards;
+        animation: fadeinout 4s linear forwards;
+        opacity: 0;
+    }
+
+    @-webkit-keyframes fadeinout {
+      50% { opacity: 1; }
+    }
+    
+    @keyframes fadeinout {
+      50% { opacity: 1; }
+    }
+    
     span.centred {
         position: fixed;
         left: 50%;
@@ -36,6 +53,7 @@
 </head>
 <body>
     <div class="centred">
+        <span class="centred notifiation">Turn up sound!</span>
         <img id="hand" src="hand.png"></img><br>
         <span class="centred">
             <button id="button">click me</button>
